@@ -73,6 +73,8 @@ function registrarCliente(){
     if(validacion(nombre,edad,email,password)){
         baseDeClientes.push({nombre,edad,email,password})
         alert("Registro exitoso,redireccionando...")
+        localStorage.setItem("baseDeClientes", JSON.stringify(baseDeClientes))//esto lo saque de internet para darle logica cuando redirecciona al login
+        window.location.href = "login.html"
     }
 }
 
