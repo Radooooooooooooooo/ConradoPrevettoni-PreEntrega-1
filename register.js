@@ -6,6 +6,11 @@ const caracteresEspeciales = [
   '~', '¡', '¿', '¬', '©', '®', '±', '§', '¶', 'µ'
 ]
 
+function terminosYcondiciones(){
+    return confirm("Acepta los terminos y condiciones?")
+}
+
+
 function validacion (nombre,edad,email,password){
     if (!nombre || !edad || !email || !password){
         alert("Todos los campos son obligatorios")
@@ -53,14 +58,20 @@ function validacion (nombre,edad,email,password){
 }
 
 function registrarCliente(){
+    if(!terminosYcondiciones()){
+        alert("Debes aceptar los terminos y condiciones para continuar.")
+        return alert
+    }
+    
+
     const nombre = prompt("Ingrese su nombre:")
     const edadStr = prompt("Ingrese su edad:")
     const edad = Number(edadStr)
     const email = prompt("Ingrese su email:")
     const password = prompt("Ingrese su contraseña:")
 
-    if(validacion){
-        baseDeClientes.push(nombre,edad,email,password)
+    if(validacion(nombre,edad,email,password)){
+        baseDeClientes.push({nombre,edad,email,password})
         alert("Registro exitoso,redireccionando...")
     }
 }
