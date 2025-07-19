@@ -7,7 +7,6 @@ function pedirDatos(){
 }
 
 function verificarDatos(){
-    pedirDatos()
     const { userIngresado, passwordIngresado } = pedirDatos()
     const cliente = baseDeClientes.find(cliente => cliente.email === userIngresado && cliente.password === passwordIngresado)
 
