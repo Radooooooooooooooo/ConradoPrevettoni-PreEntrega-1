@@ -1,4 +1,4 @@
-const baseDeClientes = JSON.parse(localStorage.getItem("baseDeClientes")) || []
+const baseDeClientes = JSON.parse(localStorage.getItem("baseDeClientes"))
 
 function pedirDatos(){
     const userIngresado = prompt("Ingrese su email: ")
